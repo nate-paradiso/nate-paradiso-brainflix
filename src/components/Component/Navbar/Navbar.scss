@@ -1,0 +1,59 @@
+@use "../../../styles/partials/_variables.scss" as *;
+@use "../../../styles/partials/_mixins.scss" as *;
+
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	margin: 1rem, 1rem, 1rem, 1rem;
+	&__search-container {
+		display: flex;
+		flex-direction: row;
+		margin: 1rem;
+		width: 90%;
+		justify-content: space-between;
+		margin-top: 0rem;
+	}
+	&__img-container {
+		&--image {
+			background-image: url(../../../assets/images/Mohan-muruge.jpg);
+			background-size: 60px;
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			background-repeat: no-repeat;
+			margin-left: 1rem;
+			background-position-x: 25%;
+			background-position-y: 50%;
+		}
+	}
+	&__button {
+		@include button;
+	}
+	&__logo {
+		margin: 1rem;
+	}
+}
+
+input {
+	background-image: url(../../../assets/images/icons/search.svg);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 240px;
+	width: 100%;
+	border-radius: 0.5rem;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	padding-left: 2rem;
+	background-size: 1.5rem;
+	background-position: (0.5rem 0.5rem);
+	font-size: 1rem;
+	border-color: $brain-flix-mercury;
+	border-style: solid;
+	background-color: $brain-flix-alabaster;
+}
+input::placeholder {
+	padding-left: 0.25rem;
+	font-family: "Avenir Next Pro Lt";
+}

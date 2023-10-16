@@ -1,10 +1,13 @@
 
 import './App.scss';
+import NavBar from './components/Component/Navbar/Navbar';
 
 function App() {
   return (
-    <h1>hello</h1>
-
+    <div>
+    <NavBar/>
+    
+    </div>
   );
 }
 
