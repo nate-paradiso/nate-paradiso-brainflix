@@ -20,3 +20,24 @@
 @mixin logo {
 	background-image: url(../../assets/images/logo/BrainFlix-logo.svg);
 }
+@mixin tablet {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin desktop {
+	@media (min-width: 1280px) {
+		@content;
+	}
+}
+@mixin avatar {
+	background-image: url(../../../assets/images/Mohan-muruge.jpg);
+	background-size: 60px;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	margin-left: 1rem;
+	background-position-x: 25%;
+	background-position-y: 50%;
+}

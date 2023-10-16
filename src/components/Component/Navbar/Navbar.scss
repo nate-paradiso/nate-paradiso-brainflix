@@ -7,6 +7,16 @@
 	justify-content: space-around;
 	align-items: center;
 	margin: 1rem, 1rem, 1rem, 1rem;
+	@include tablet {
+		flex-direction: row;
+		margin-left: 2.25rem;
+		margin-right: 2.25rem;
+		margin-bottom: 1rem;
+		@include desktop {
+			margin-left: 5rem;
+			margin-right: 5rem;
+		}
+	}
 	&__search-container {
 		display: flex;
 		flex-direction: row;
@@ -14,18 +24,23 @@
 		width: 90%;
 		justify-content: space-between;
 		margin-top: 0rem;
+		@include tablet {
+			display: block;
+			margin-top: 1rem;
+		}
 	}
 	&__img-container {
 		&--image {
-			background-image: url(../../../assets/images/Mohan-muruge.jpg);
-			background-size: 60px;
-			height: 40px;
+			@include avatar;
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+	&__img-container--image-tablet {
+		@include tablet {
+			@include avatar;
 			width: 40px;
-			border-radius: 50%;
-			background-repeat: no-repeat;
-			margin-left: 1rem;
-			background-position-x: 25%;
-			background-position-y: 50%;
 		}
 	}
 	&__button {
@@ -33,9 +48,14 @@
 	}
 	&__logo {
 		margin: 1rem;
+		@include tablet {
+			margin-right: 8rem;
+		}
+		@include desktop {
+			margin-right: 35rem;
+		}
 	}
 }
-
 input {
 	background-image: url(../../../assets/images/icons/search.svg);
 	background-repeat: no-repeat;
@@ -52,6 +72,10 @@ input {
 	border-color: $brain-flix-mercury;
 	border-style: solid;
 	background-color: $brain-flix-alabaster;
+	outline: none;
+	&:focus {
+		border-color: $brain-flix-blue;
+	}
 }
 input::placeholder {
 	padding-left: 0.25rem;
