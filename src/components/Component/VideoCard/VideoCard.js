@@ -1,13 +1,10 @@
-import "./VideoCardList.scss";
+import "./VideoCard.scss";
 import videoData from "../../../data/videos.json"
 import videoDataDetails from "../../../data/video-details.json"
-import { VideoCard } from "../VideoCard/VideoCard";
 
-
-
-export function VideoCardList () {
+export function VideoCard () {
     console.log(videoData)
-    console.log(videoDataDetails)
+    // console.log(videoDataDetails)
 
     return(
         <>
