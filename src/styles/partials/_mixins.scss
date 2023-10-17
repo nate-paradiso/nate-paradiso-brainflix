@@ -1,7 +1,7 @@
 @use "./variables" as *;
 
 @mixin button {
-	width: 90%;
+	width: 100%;
 	background-color: $brain-flix-blue;
 	cursor: pointer;
 	height: 2.5rem;
