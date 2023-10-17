@@ -1,13 +1,15 @@
 
 import './App.scss';
 import NavBar from './components/Component/Navbar/Navbar';
-import Hero from './components/Component/Hero/Hero';
+import CurrentVideo from './components/Component/CurrentVideo/CurrentVideo';
+import Comments from './components/Component/Comments/Comments';
 
 function App() {
   return (
     <div>
     <NavBar/>
-    <Hero/>
+    <CurrentVideo/>
+    <Comments/>
     
     </div>
   );
