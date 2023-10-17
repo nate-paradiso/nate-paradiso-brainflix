@@ -13,17 +13,17 @@ function NavBar () {
                 <form>
                     <input type="text" placeholder="Search" name="search"></input>
                 </form>
-                <div class="header__img-container">
-                    <div class="header__img-container--image">
+                <div className="header__img-container">
+                    <div className="header__img-container--image">
                     </div>
                 </div>
             </div>
             <button className="header__button">UPLOAD</button>
-            <div class="header__img-container-tablet">
-                <div class="header__img-container--image-tablet">
+            <div className="header__img-container-tablet">
+                <div className="header__img-container--image-tablet">
                 </div>
             </div>
         </header>
     );
 }
-export default NavBar
+export { NavBar };
