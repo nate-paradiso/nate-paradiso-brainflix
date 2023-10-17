@@ -1,11 +1,10 @@
 import "./CommentsCard.scss"
 
 export function CommentsCard ( {name, comment, timestamp}) {
-
     return(
         <div id="formComments" class="comment-section">
         <div class="comments-container">
-            <div class="comments-container__avatar"></div>
+            <div class="comments-container__avatar comments-container__avatar--greyed"></div>
             <div class="comments-container__all-text">
                 <div class="comments-container__text--time">
                     <p class="comments-container__text--name-label">{name}</p>

@@ -5,7 +5,6 @@ export function Form () {
     return(
         <>
         <form className="form" id="myForm">
-        <h2 className="form-title">3 Comments</h2>
         <div className="form-container">
             <div className="form-container__img-container">
                 <div className="form-container__img-container--image"></div>

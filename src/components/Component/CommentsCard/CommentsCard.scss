@@ -2,89 +2,58 @@
 @use "../../../styles/partials/_mixins.scss" as *;
 @use "../../../styles/partials/fonts" as *;
 
-.form-container {
+.comments-container {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	border-radius: 4px;
+	border-color: #afafaf;
+	border-top: solid 2px #e1e1e1;
+	justify-content: space-between;
+	margin: 0rem 1rem 1rem 1rem;
+	padding-top: 1rem;
 	@include tablet {
-		padding: 2rem 3rem 0rem 3rem;
+		margin: 2rem 4rem 2rem 4rem;
 	}
 	@include desktop {
-		padding: 2rem 20rem 0rem 20rem;
+		margin: 2rem 21rem 2rem 21rem;
 	}
-	&__typing {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		padding: 0rem 1rem 1rem 3rem;
+	&__avatar {
+		background-color: $outline-color;
+		height: 36px;
+		width: 36px;
+		border-radius: 50%;
+		display: inline-block;
+		&--greyed {
+			margin-top: 1rem;
+		}
+		@include tablet {
+			height: 48px;
+			width: 48px;
+		}
+	}
+	&__all-text {
+		width: 85%;
+		@include tablet {
+			width: 88%;
+		}
+	}
+	&__text {
 		&--name {
-			border-radius: 4px;
-			border: solid 1px $outline-color;
-			height: 3rem;
-			background-color: #fafafa;
+			display: flex;
+			flex-direction: row;
 		}
 		&--name-label {
-			padding-bottom: 1rem;
+			color: $primary-background-color-1;
+			font-weight: 600;
 		}
-		&--comments {
-			background-color: $alternative-background-color-1;
-			border-radius: 4px;
-			height: 6rem;
-			resize: none;
-			border: solid 1px $outline-color;
+		&--time {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
 		}
-		&--comments-label {
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-			align-self: flex-start;
-			@include tablet {
-			}
-		}
-		&--button {
-			margin-top: 1rem;
-			height: 2rem;
-			text-transform: uppercase;
-			background-color: $primary-background-color-1;
-			border-radius: 4px;
-			color: $primary-text-color-1;
-			width: 100%;
-			align-self: end;
-			cursor: pointer;
-			&:hover {
-				background-color: $primary-background-color-2;
-			}
-			@include tablet {
-				width: 30%;
-				max-width: 9.375rem;
-			}
-			@include desktop {
-				width: 30%;
-				max-width: 9.375rem;
-			}
-		}
-	}
-	&__img-container {
-		width: 36px;
-		height: 36px;
-		@include tablet {
-			width: 48px;
-			height: 48px;
-		}
-		&--image {
-			background-image: url(../../../assets/images/Mohan-muruge.jpg);
-			background-size: 56px;
-			height: 36px;
-			width: 36px;
-			border-radius: 50%;
-			background-repeat: no-repeat;
-			margin: 1rem;
-			background-position-x: 25%;
-			background-position-y: 50%;
-			@include tablet {
-				width: 48px;
-				height: 48px;
-				background-size: 85px;
-			}
+		&--time-label {
+			color: #afafaf;
+			font-weight: 400;
 		}
 	}
 }

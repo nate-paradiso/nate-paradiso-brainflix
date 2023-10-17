@@ -1,10 +1,9 @@
 import "./VideoCard.scss";
-// import videoData from "../../../data/videos.json"
 import videoDataDetails from "../../../data/video-details.json"
 
 export function VideoCard ( {image, title, channel}) {
     // console.log(videoData)
-    console.log(videoDataDetails)
+    // console.log(videoDataDetails)
 
     return(
         <div className="video-container__card">
