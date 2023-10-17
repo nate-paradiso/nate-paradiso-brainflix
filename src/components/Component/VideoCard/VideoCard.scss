@@ -1,0 +1,38 @@
+@use "../../../styles/partials/_variables.scss" as *;
+@use "../../../styles/partials/_mixins.scss" as *;
+
+.video-container {
+	margin: 1rem;
+	width: 95%;
+	&__card {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 1rem;
+		&--text {
+			display: flex;
+			flex-direction: column;
+		}
+		&--text-title {
+			margin-top: 0rem;
+			font-weight: 600;
+		}
+		&--text-paragraph {
+			margin-top: 0rem;
+		}
+	}
+	&__title {
+		padding-top: 1rem;
+		align-self: flex-start;
+		text-transform: uppercase;
+		color: #afafaf;
+		font-weight: 500;
+	}
+}
+
+.image {
+	aspect-ratio: 16 /9;
+	height: 90px;
+	margin-right: 1rem;
+	background-color: $brain-flix-mercury;
+	border-radius: 4px;
+}

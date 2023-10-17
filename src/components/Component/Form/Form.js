@@ -1,7 +1,7 @@
-import "./Comments.scss";
+import "./Form.scss";
 // import ""
 
-export function Comments () {
+export function Form () {
 
     return(
         <>

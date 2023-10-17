@@ -6,12 +6,20 @@ import { VideoCard } from "../VideoCard/VideoCard";
 
 
 export function VideoCardList () {
-    console.log(videoData)
-    console.log(videoDataDetails)
 
     return(
-        <>
-            <video>placeholder</video>
-        </>
+        <div className="video-container">
+        <h3 className="video-container__title">Next Videos</h3>
+            {videoDataDetails.map(detail => {
+                return (
+                    <VideoCard
+                    key={detail.id}
+                    image={detail.image}
+                    title={detail.title}
+                    channel={detail.channel}
+                    />
+                )
+            })}
+        </div>
     )
 }
