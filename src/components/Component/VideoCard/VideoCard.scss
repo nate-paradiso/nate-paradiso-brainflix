@@ -4,6 +4,9 @@
 .video-container {
 	margin: 1rem;
 	width: 95%;
+	@include tablet {
+		margin: 0rem 3rem 0rem 3rem;
+	}
 	&__card {
 		display: flex;
 		flex-direction: row;
@@ -11,6 +14,9 @@
 		&--text {
 			display: flex;
 			flex-direction: column;
+			@include tablet {
+				margin-right: 23rem;
+			}
 		}
 		&--text-title {
 			margin-top: 0rem;

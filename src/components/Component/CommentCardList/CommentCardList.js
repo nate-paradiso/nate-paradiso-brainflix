@@ -1,7 +1,7 @@
 import "./CommentCardList.scss"
 import videoDataDetails from "../../../data/video-details.json"
 import { CommentsCard } from "../CommentsCard/CommentsCard"
-// import { Form } from "../Form/Form"
+import { formatTime } from "../CommentsCard/functions"
 
 
 
@@ -9,13 +9,9 @@ export function CommentCardList () {
     console.log(videoDataDetails)
  
     
-    // <Form/>
+  
     
-    // function formatTime (timestamp) {
-    //     const date = new Date(timestamp);
-    //     // console.log(date)
-    //     return date.toLocaleDateString();
-    // }
+
 
     return(
         <div className="comment-container">
@@ -27,7 +23,7 @@ export function CommentCardList () {
                     key={detail.comments[0].id}
                     name={detail.comments[0].name}
                     comment={detail.comments[0].comment}
-                    timestamp={detail.comments[0].timestamp}
+                    timestamp={formatTime(detail.comments[0].timestamp)}
                     />
                     </>
                 )
