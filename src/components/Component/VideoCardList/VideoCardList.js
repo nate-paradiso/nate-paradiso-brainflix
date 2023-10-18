@@ -5,7 +5,7 @@ import { VideoCard } from "../VideoCard/VideoCard";
 
 
 
-export function VideoCardList () {
+export function VideoCardList ({setSelectedVideo}) {
 
     return(
         <div className="video-container">
@@ -17,6 +17,8 @@ export function VideoCardList () {
                     image={detail.image}
                     title={detail.title}
                     channel={detail.channel}
+                    id={detail.id}
+                    setSelectedVideo={setSelectedVideo}
                     />
                 )
             })}

@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf");
+  font-weight: 700;
+}
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  width: 100%;
+  margin: auto;
+  font-family: "Avenir Next", Georgia, "Times New Roman", Times, serif;
+}/*# sourceMappingURL=App.css.map */
