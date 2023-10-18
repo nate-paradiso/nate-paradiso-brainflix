@@ -1,13 +1,17 @@
 import "./CommentCardList.scss"
 import videoDataDetails from "../../../data/video-details.json"
 import { CommentsCard } from "../CommentsCard/CommentsCard"
-import { formatTime } from "../CommentsCard/functions"
 
 
 
 export function CommentCardList () {
     console.log(videoDataDetails)
- 
+
+
+    const formatTime = (timestamp) => {
+        const date = new Date(timestamp);
+        return date.toLocaleDateString();
+    }
     
   
     
