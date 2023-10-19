@@ -2,6 +2,11 @@
 @use "./styles/partials/_variables.scss" as *;
 @use "./styles/partials/_mixins.scss" as *;
 
+*,
+*::before,
+*::after {
+	font-family: "Avenir Next", Georgia, "Times New Roman", Times, serif;
+}
 html {
 	padding: 0;
 	margin: 0;
@@ -11,7 +16,7 @@ html {
 body {
 	width: 100%;
 	margin: auto;
-	font-family: "Avenir Next", Georgia, "Times New Roman", Times, serif;
+	color: $brain-flix-black;
 }
 .main {
 	display: flex;
