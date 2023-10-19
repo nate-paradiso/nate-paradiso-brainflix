@@ -1,5 +1,4 @@
 import "./VideoCardList.scss";
-import videoData from "../../../data/videos.json"
 import videoDetails from "../../../data/video-details.json"
 import { VideoCard } from "../VideoCard/VideoCard";
 

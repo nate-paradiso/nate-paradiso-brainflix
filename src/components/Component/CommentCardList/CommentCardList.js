@@ -1,31 +1,22 @@
 import "./CommentCardList.scss"
-import videoDataDetails from "../../../data/video-details.json"
+import videoDetails from "../../../data/video-details.json"
 import { CommentsCard } from "../CommentsCard/CommentsCard"
 
 
-export function CommentCardList () {
-    console.log(videoDataDetails)
-
-    const formatTime = (timestamp) => {
-        const date = new Date(timestamp);
-        return date.toLocaleDateString();
-    }
+export function CommentCardList ({selectedVideoId, handleSelectVideo}) {
 
     return(
         <div className="comment-container">
-            {videoDataDetails.map(detail => {
-                return (
+            {videoDetails
+            .find(videoComments => videoComments.id === selectedVideoId).comments
+            .map(comment => 
                     <>
-                  
                     <CommentsCard
-                    key={detail.comments[0].id}
-                    name={detail.comments[0].name}
-                    comment={detail.comments[0].comment}
-                    timestamp={formatTime(detail.comments[0].timestamp)}
+                    comment={comment}
+                    handleSelectVideo={handleSelectVideo}
                     />
                     </>
-                )
-            })}
+            )}
         </div>
     )
 }

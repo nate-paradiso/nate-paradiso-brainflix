@@ -26,7 +26,10 @@ function App() {
     <div className="main">
       <div className="main__comments">
         <Form/>    
-        <CommentCardList/>
+        <CommentCardList
+        selectedVideoId={selectedVideoId}
+        handleSelectVideo={handleSelectVideo}
+        />
       </div>      
       <VideoCardList
       selectedVideoId={selectedVideoId}
