@@ -1,6 +1,6 @@
 import "./CommentsCard.scss"
 
-export function CommentsCard ( {comment, handleSelectVideo}) {
+export function CommentsCard ( {comment}) {
 
     const formatTime = (timestamp) => {
         const date = new Date(timestamp);

@@ -1,11 +1,11 @@
 
-import {NavBar} from './components/Component/Navbar/Navbar';
-import {CurrentVideo} from './components/Component/CurrentVideo/CurrentVideo';
-import {Form} from './components/Component/Form/Form';
+import { NavBar } from './components/Component/Navbar/Navbar';
+import { CurrentVideo } from './components/Component/CurrentVideo/CurrentVideo';
+import { Form } from './components/Component/Form/Form';
 import { CommentCardList } from './components/Component/CommentCardList/CommentCardList';
-import {VideoCardList} from './components/Component/VideoCardList/VideoCardList';
+import { VideoCardList } from './components/Component/VideoCardList/VideoCardList';
+import { CurrentVideoDetails } from './components/Component/VideoDetails/VideoDetail';
 import './App.scss';
-import videoDataDetails from "./data/video-details.json";
 import { useState } from 'react';
 
 
@@ -23,12 +23,14 @@ function App() {
     <CurrentVideo
     selectedVideoId={selectedVideoId}
     />
+    <CurrentVideoDetails
+    selectedVideoId={selectedVideoId}
+    />
     <div className="main">
       <div className="main__comments">
         <Form/>    
         <CommentCardList
         selectedVideoId={selectedVideoId}
-        handleSelectVideo={handleSelectVideo}
         />
       </div>      
       <VideoCardList

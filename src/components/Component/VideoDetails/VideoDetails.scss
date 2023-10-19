@@ -1,0 +1,11 @@
+.title {
+	color: pink;
+}
+.data {
+	display: flex;
+	flex-direction: row;
+	&__container {
+		display: flex;
+		flex-direction: row;
+	}
+}

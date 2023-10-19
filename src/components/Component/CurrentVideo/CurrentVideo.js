@@ -7,7 +7,9 @@ export function CurrentVideo ({selectedVideoId}) {
         <div className="video-main">
             <div className="video-main__wrapper">
                 <video className="video-main__wrapper--video" 
-                poster={videoDetails.find(videoImage => videoImage.id === selectedVideoId).image} controls>
+                poster={videoDetails
+                .find(videoImage => videoImage.id === selectedVideoId)
+                .image} controls>
                 </video>
             </div>
         </div>
