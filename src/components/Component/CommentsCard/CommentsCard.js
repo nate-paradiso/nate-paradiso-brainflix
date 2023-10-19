@@ -1,6 +1,6 @@
 import "./CommentsCard.scss"
 
-export function CommentsCard ( {name, comment, timestamp}) {
+export function CommentsCard ( {name, comments, timestamp}) {
     return(
         <div id="formComments" class="comment-section">
         <div class="comments-container">
@@ -11,7 +11,7 @@ export function CommentsCard ( {name, comment, timestamp}) {
                     <p class="comments-container__text--time-label">{timestamp}</p>
                 </div>
                 <div class="comments-container__text">
-                    <p class="comments-container__text--comment">{comment}</p>                
+                    <p class="comments-container__text--comment">{comments}</p>                
                 </div>
             </div>
         </div>

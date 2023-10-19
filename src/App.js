@@ -10,20 +10,18 @@ import { useState } from 'react';
 
 
 function App() {
-  const defaultVideo = videoDataDetails.find(video =>{
-    return video.id === "84e96018-4022-434e-80bf-000ce4cd12b8"
-    }) 
-  const [selectedVideo, setSelectedVideo] = useState(
-    defaultVideo
-  )
-    console.log(selectedVideo)
 
   
+  const [selectedVideoId, setSelectedVideo] = useState("84e96018-4022-434e-80bf-000ce4cd12b8")
+
+  const handleSelectVideo = (id) => {
+    setSelectedVideo(id)
+  }
   return (
     <div className="App">
     <NavBar/>
     <CurrentVideo
-    videoImage={selectedVideo.image}
+    selectedVideoId={selectedVideoId}
     />
     <div className="main">
       <div className="main__comments">
@@ -31,7 +29,8 @@ function App() {
         <CommentCardList/>
       </div>      
       <VideoCardList
-      setSelectedVideo={setSelectedVideo}
+      selectedVideoId={selectedVideoId}
+      handleSelectVideo={handleSelectVideo}
       />
     </div>
     

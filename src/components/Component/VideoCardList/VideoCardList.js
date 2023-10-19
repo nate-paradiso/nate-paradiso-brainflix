@@ -1,27 +1,23 @@
 import "./VideoCardList.scss";
 import videoData from "../../../data/videos.json"
-import videoDataDetails from "../../../data/video-details.json"
+import videoDetails from "../../../data/video-details.json"
 import { VideoCard } from "../VideoCard/VideoCard";
 
 
 
-export function VideoCardList ({setSelectedVideo}) {
+export function VideoCardList ({selectedVideoId, handleSelectVideo}) {
 
     return(
         <div className="video-container">
         <h3 className="video-container__title">Next Videos</h3>
-            {videoDataDetails.map(detail => {
-                return (
+            {videoDetails
+                .filter(videoDetails => videoDetails.id != selectedVideoId)
+                .map(videoDetails => 
                     <VideoCard
-                    key={detail.id}
-                    image={detail.image}
-                    title={detail.title}
-                    channel={detail.channel}
-                    id={detail.id}
-                    setSelectedVideo={setSelectedVideo}
+                        videoDetails={videoDetails}
+                        handleSelectVideo={handleSelectVideo}
                     />
-                )
-            })}
+                ) }
         </div>
     )
 }
