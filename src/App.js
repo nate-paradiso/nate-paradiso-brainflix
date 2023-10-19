@@ -25,11 +25,15 @@ function App() {
     <CurrentVideo
     videoImage={selectedVideo.image}
     />
-    <Form/>
-    <CommentCardList/>
-    <VideoCardList
-    setSelectedVideo={setSelectedVideo}
-    />
+    <div className="main">
+      <div className="main__comments">
+        <Form/>    
+        <CommentCardList/>
+      </div>      
+      <VideoCardList
+      setSelectedVideo={setSelectedVideo}
+      />
+    </div>
     
     </div>
   )

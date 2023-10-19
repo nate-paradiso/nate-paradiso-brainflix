@@ -5,8 +5,10 @@ import "./CurrentVideo.scss";
 export function CurrentVideo ({videoImage}) {
 
     return(
-        <div className="current-video">
-            <video className="current-video__player" poster={videoImage}></video>
+        <div className="video-main">
+            <div className="video-main__wrapper">
+                <video className="video-main__wrapper--video" poster={videoImage} controls></video>
+            </div>
         </div>
     )
 }

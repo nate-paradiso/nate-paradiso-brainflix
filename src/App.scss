@@ -1,4 +1,6 @@
-@use "../src/styles/partials/_fonts.scss";
+@use "./styles/partials/_fonts.scss";
+@use "./styles/partials/_variables.scss" as *;
+@use "./styles/partials/_mixins.scss" as *;
 
 html {
 	padding: 0;
@@ -10,4 +12,15 @@ body {
 	width: 100%;
 	margin: auto;
 	font-family: "Avenir Next", Georgia, "Times New Roman", Times, serif;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	@include desktop {
+		flex-direction: row;
+		justify-content: space-around;
+		&__comments {
+			width: 100%;
+		}
+	}
 }

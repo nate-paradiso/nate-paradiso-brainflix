@@ -11,11 +11,17 @@
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 1rem;
+		&:hover {
+			cursor: pointer;
+		}
 		&--text {
 			display: flex;
 			flex-direction: column;
 			@include tablet {
 				margin-right: 23rem;
+			}
+			@include desktop {
+				margin-right: 5rem;
 			}
 		}
 		&--text-title {
