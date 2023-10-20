@@ -1,11 +1,7 @@
 import "./CommentsCard.scss"
 
-export function CommentsCard ( {comment}) {
+export function CommentsCard ( {comment, formatTime}) {
 
-    const formatTime = (timestamp) => {
-        const date = new Date(timestamp);
-        return date.toLocaleDateString();
-    }
     return(
         <div id="formComments" className="comment-section">
         <div className="comments-container">

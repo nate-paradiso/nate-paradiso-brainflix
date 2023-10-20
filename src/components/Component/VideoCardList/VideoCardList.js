@@ -15,10 +15,12 @@ export function VideoCardList ({selectedVideoId, handleSelectVideo}) {
                     .filter(videoDetails => videoDetails.id != selectedVideoId)
                     .map(videoDetails => 
                         <VideoCard
+                            key={videoDetails.id}
                             videoDetails={videoDetails}
                             handleSelectVideo={handleSelectVideo}
-                    />
-                ) }
+                        />
+                    ) 
+                }
         </section>
     )
 }

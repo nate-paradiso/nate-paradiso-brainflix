@@ -4,13 +4,8 @@ import viewsIcon from "../../../assets/images/icons/views.svg"
 import likesIcon from "../../../assets/images/icons/likes.svg"
 
 
-export function CurrentVideoDetails ( {selectedVideoId}) {
-console.log(videoDetails)
+export function VideoDetails ( {selectedVideoId, formatTime}) {
 
-const formatTime = (timestamp) => {
-    const date = new Date(timestamp);
-    return date.toLocaleDateString();
-}
     return(
         <div className="details-container">
         <h1 className="title">{videoDetails
@@ -56,11 +51,11 @@ const formatTime = (timestamp) => {
                 .find(videoImage => videoImage.id === selectedVideoId)
                 .description}
             </p>
-            <h3 className="data__comment">
+            <h4 className="data__comment">
                 {videoDetails
                 .find(videoImage => videoImage.id === selectedVideoId)
                 .comments.length} Comments
-            </h3>
+            </h4>
         </div>
         </div>
     )
