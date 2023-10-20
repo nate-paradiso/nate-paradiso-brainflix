@@ -18,28 +18,33 @@ function App() {
     setSelectedVideo(id)
   }
   return (
-    <div className="App">
+    <>
+    <header >
     <NavBar/>
     <CurrentVideo
     selectedVideoId={selectedVideoId}
     />
-    <CurrentVideoDetails
-    selectedVideoId={selectedVideoId}
-    />
-    <div className="main">
-      <div className="main__comments">
+    </header>
+    <main className="main">
+      <section className="main__comments">
+        <CurrentVideoDetails
+        selectedVideoId={selectedVideoId}
+        />
         <Form/>    
         <CommentCardList
         selectedVideoId={selectedVideoId}
         />
-      </div>      
+      </section>  
+      <section>    
       <VideoCardList
       selectedVideoId={selectedVideoId}
       handleSelectVideo={handleSelectVideo}
       />
-    </div>
+      </section>
+    </main>
     
-    </div>
+    
+    </>
   )
 }
 

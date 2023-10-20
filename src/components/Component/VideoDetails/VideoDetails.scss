@@ -1,10 +1,74 @@
-.title {
+@use "../../../styles/partials/_variables.scss" as *;
+@use "../../../styles/partials/_mixins.scss" as *;
+
+.details-container {
+	margin: 0rem 1rem 0rem 1rem;
+	@include tablet {
+		margin: 0rem 3rem 0rem 3rem;
+		@include desktop {
+			padding: 2rem 0rem 0rem 5rem;
+			margin: auto;
+			border-right: solid 2px $outline-color;
+		}
+	}
 }
+.title {
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 2.0625rem;
+	@include tablet {
+		line-height: 2.75rem;
+		font-size: 2.0625rem;
+	}
+}
+
 .data {
 	display: flex;
 	flex-direction: row;
+	border-top: solid 2px $brain-flix-mercury;
+	border-bottom: solid 2px $brain-flix-mercury;
+	justify-content: space-between;
+	@include tablet {
+		border-top: none;
+	}
+
 	&__container {
 		display: flex;
 		flex-direction: column;
+		@include tablet {
+			flex-direction: row;
+		}
+		&--title {
+			font-weight: 600;
+			@include tablet {
+				margin-right: 2rem;
+			}
+		}
+		&--numbers {
+			color: $brain-flix-silver;
+		}
+
+		&--icon {
+			margin-right: 1rem;
+		}
+	}
+	&__container-views {
+		display: flex;
+		flex-direction: row;
+		margin-right: 5rem;
+		@include tablet {
+			margin-right: 2rem;
+		}
+	}
+	&__container-likes {
+		display: flex;
+		flex-direction: row;
+		margin-right: 5rem;
+		@include tablet {
+			margin-right: 0rem;
+		}
+	}
+	&__comment {
+		font-weight: 600;
 	}
 }

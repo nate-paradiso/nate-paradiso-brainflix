@@ -26,7 +26,7 @@
 	flex-direction: row;
 	justify-content: space-around;
 	@include tablet {
-		padding: 2rem 3rem 0rem 3rem;
+		padding: 0rem 3rem 0rem 3rem;
 	}
 	@include desktop {
 		padding: 2rem 0rem 0rem 5rem;

@@ -12,6 +12,7 @@ export function CommentCardList ({selectedVideoId, handleSelectVideo}) {
             .map(comment => 
                     <>
                     <CommentsCard
+                    key={selectedVideoId.id}
                     comment={comment}
                     handleSelectVideo={handleSelectVideo}
                     />

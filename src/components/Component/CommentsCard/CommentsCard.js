@@ -7,18 +7,18 @@ export function CommentsCard ( {comment}) {
         return date.toLocaleDateString();
     }
     return(
-        <div id="formComments" class="comment-section">
-        <div class="comments-container">
-            <div class="comments-container__avatar comments-container__avatar--greyed"></div>
-            <div class="comments-container__all-text">
-                <div class="comments-container__text--time">
-                    <p class="comments-container__text--name-label">{comment.name}</p>
-                    <p class="comments-container__text--time-label">
+        <div id="formComments" className="comment-section">
+        <div className="comments-container">
+            <div className="comments-container__avatar comments-container__avatar--greyed"></div>
+            <div className="comments-container__all-text">
+                <div className="comments-container__text--time">
+                    <p className="comments-container__text--name-label">{comment.name}</p>
+                    <p className="comments-container__text--time-label">
                     {formatTime(comment.timestamp)}
                     </p>
                 </div>
-                <div class="comments-container__text">
-                    <p class="comments-container__text--comment">{comment.comment}</p>                
+                <div className="comments-container__text">
+                    <p className="comments-container__text--comment">{comment.comment}</p>                
                 </div>
             </div>
         </div>

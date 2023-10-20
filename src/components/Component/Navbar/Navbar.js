@@ -5,7 +5,7 @@ import logo from "../../../assets/images/logo/BrainFlix-logo.svg"
 function NavBar () {
 
     return(
-        <header className="header">
+        <div className="header">
             <div className="header__logo">
                 <img src={logo} alt="logo"></img>
             </div>
@@ -23,7 +23,7 @@ function NavBar () {
                 <div className="header__img-container--image-tablet">
                 </div>
             </div>
-        </header>
+        </div>
     );
 }
 export { NavBar };
