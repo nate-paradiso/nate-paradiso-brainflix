@@ -2,10 +2,18 @@
 @use "../../../styles/partials/_mixins.scss" as *;
 
 .video-container {
-	margin: 1rem;
+	margin: 0rem 1rem 1rem 1rem;
 	width: 95%;
+	margin-bottom: 2rem;
+	border-top: solid 2px #e1e1e1;
 	@include tablet {
-		margin: 0rem 3rem 0rem 3rem;
+		margin: 0rem 3rem 2rem 3rem;
+		padding-right: 3rem;
+		width: 100%;
+	}
+	@include desktop {
+		margin: 0rem 3rem 0rem 2rem;
+		border: none;
 	}
 	&__card {
 		display: flex;
@@ -26,7 +34,7 @@
 		}
 		&--text-title {
 			margin-top: 0rem;
-			font-weight: 600;
+			font-weight: 700;
 		}
 		&--text-paragraph {
 			margin-top: 0rem;
@@ -37,7 +45,7 @@
 		align-self: flex-start;
 		text-transform: uppercase;
 		color: #afafaf;
-		font-weight: 500;
+		font-weight: 400;
 	}
 }
 

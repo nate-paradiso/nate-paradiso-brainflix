@@ -18,12 +18,12 @@ function App() {
     setSelectedVideo(id)
   }
   return (
-    <>
+  <>
     <header >
-    <NavBar/>
-    <CurrentVideo
-    selectedVideoId={selectedVideoId}
-    />
+      <NavBar/>
+      <CurrentVideo
+      selectedVideoId={selectedVideoId}
+      />
     </header>
     <main className="main">
       <section className="main__comments">
@@ -35,16 +35,12 @@ function App() {
         selectedVideoId={selectedVideoId}
         />
       </section>  
-      <section>    
       <VideoCardList
       selectedVideoId={selectedVideoId}
       handleSelectVideo={handleSelectVideo}
-      />
-      </section>
+      />    
     </main>
-    
-    
-    </>
+   </>
   )
 }
 

@@ -4,7 +4,7 @@ import videoDetails from "../../../data/video-details.json"
 export function CurrentVideo ({selectedVideoId}) {
 
     return(
-        <div className="video-main">
+        <section className="video-main">
             <div className="video-main__wrapper">
                 <video className="video-main__wrapper--video" 
                 poster={videoDetails
@@ -12,6 +12,6 @@ export function CurrentVideo ({selectedVideoId}) {
                 .image} controls>
                 </video>
             </div>
-        </div>
+        </section>
     )
 }

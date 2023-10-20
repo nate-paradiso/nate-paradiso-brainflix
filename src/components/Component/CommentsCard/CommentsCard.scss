@@ -6,16 +6,15 @@
 	display: flex;
 	flex-direction: row;
 	border-radius: 4px;
-	border-color: #afafaf;
 	border-top: solid 2px #e1e1e1;
 	justify-content: space-between;
-	margin: 0rem 1rem 1rem 1rem;
-	padding-top: 1rem;
+	margin: 0rem 1rem 0rem 1rem;
 	@include tablet {
-		margin: 2rem 3rem 2rem 3rem;
+		margin: 1.5rem 3rem 1rem 3rem;
 	}
 	@include desktop {
 		margin: 2rem 0rem 2rem 5rem;
+		padding-right: 2rem;
 	}
 	&__avatar {
 		background-color: $outline-color;
@@ -23,18 +22,23 @@
 		width: 36px;
 		border-radius: 50%;
 		display: inline-block;
+		margin-top: 1.5rem;
 		&--greyed {
-			margin-top: 1rem;
+			@include tablet {
+				margin-top: 1rem;
+			}
 		}
 		@include tablet {
+			margin-top: 1.5rem;
 			height: 48px;
 			width: 48px;
 		}
 	}
 	&__all-text {
-		width: 85%;
+		width: 100%;
+		margin-left: 1rem;
 		@include tablet {
-			width: 88%;
+			margin-left: 2rem;
 		}
 	}
 	&__text {
@@ -43,8 +47,9 @@
 			flex-direction: row;
 		}
 		&--name-label {
-			color: $primary-background-color-1;
+			color: $brain-flix-black;
 			font-weight: 600;
+			margin-bottom: 0rem;
 		}
 		&--time {
 			display: flex;
@@ -54,6 +59,7 @@
 		&--time-label {
 			color: #afafaf;
 			font-weight: 400;
+			margin-bottom: 0rem;
 		}
 	}
 }

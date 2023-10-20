@@ -8,13 +8,12 @@
 		@include desktop {
 			padding: 2rem 0rem 0rem 5rem;
 			margin: auto;
-			border-right: solid 2px $outline-color;
 		}
 	}
 }
 .title {
-	font-weight: 700;
-	font-size: 1.5rem;
+	font-weight: 600;
+	font-size: 2rem;
 	line-height: 2.0625rem;
 	@include tablet {
 		line-height: 2.75rem;
@@ -31,12 +30,17 @@
 	@include tablet {
 		border-top: none;
 	}
+	@include desktop {
+	}
 
 	&__container {
 		display: flex;
 		flex-direction: column;
 		@include tablet {
 			flex-direction: row;
+		}
+		@include desktop {
+			margin-right: 2rem;
 		}
 		&--title {
 			font-weight: 600;
@@ -55,7 +59,6 @@
 	&__container-views {
 		display: flex;
 		flex-direction: row;
-		margin-right: 5rem;
 		@include tablet {
 			margin-right: 2rem;
 		}
@@ -70,5 +73,9 @@
 	}
 	&__comment {
 		font-weight: 600;
+	}
+	&__description {
+		margin-right: 1rem;
+		margin-bottom: 3rem;
 	}
 }

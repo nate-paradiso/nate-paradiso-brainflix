@@ -10,9 +10,7 @@
 	margin: 0rem 1rem 1rem 1rem;
 	@include tablet {
 		flex-direction: row;
-		margin-left: 2.25rem;
-		margin-right: 2.25rem;
-		margin-bottom: 1rem;
+		margin: 0rem 2.25rem 0rem 2.25rem;
 		@include desktop {
 			margin-left: 5rem;
 			margin-right: 5rem;
@@ -72,10 +70,9 @@ input {
 	background-size: 1.5rem;
 	background-position: (0.5rem 0.5rem);
 	font-size: 1rem;
-	border-color: $brain-flix-mercury;
-	border-style: solid;
 	background-color: $brain-flix-alabaster;
 	outline: none;
+	border: solid 2px $brain-flix-mercury;
 	&:focus {
 		border-color: $brain-flix-blue;
 	}

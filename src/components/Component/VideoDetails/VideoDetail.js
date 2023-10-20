@@ -18,11 +18,11 @@ const formatTime = (timestamp) => {
         .title}</h1>
         <div className="data">
             <div className="data__container">
-                <p className="data__container--title">
+                <h3 className="data__container--title">
                     By {videoDetails
                     .find(videoImage => videoImage.id === selectedVideoId)
                     .channel}
-                </p>
+                </h3>
                 <p className="data__container--numbers data__container--margin">
                     {formatTime(videoDetails
                     .find(videoImage => videoImage.id === selectedVideoId)
@@ -51,16 +51,16 @@ const formatTime = (timestamp) => {
             </div>
         </div>
         <div>
-            <p>
+            <p className="data__description">
                 {videoDetails
                 .find(videoImage => videoImage.id === selectedVideoId)
                 .description}
             </p>
-            <p className="data__comment">
+            <h3 className="data__comment">
                 {videoDetails
                 .find(videoImage => videoImage.id === selectedVideoId)
                 .comments.length} Comments
-            </p>
+            </h3>
         </div>
         </div>
     )

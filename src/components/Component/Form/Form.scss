@@ -29,7 +29,7 @@
 		padding: 0rem 3rem 0rem 3rem;
 	}
 	@include desktop {
-		padding: 2rem 0rem 0rem 5rem;
+		padding: 0rem 2rem 0rem 5rem;
 	}
 	&__typing {
 		display: flex;
@@ -38,14 +38,14 @@
 		padding: 0rem 1rem 1rem 1rem;
 		@include tablet {
 			padding: 0rem;
-			margin-left: 3rem;
+			margin-left: 2rem;
 		}
 		&--comments {
 			background-color: $alternative-background-color-1;
 			border-radius: 4px;
 			height: 6rem;
 			resize: none;
-			border: solid 1px $outline-color;
+			border: solid 2px $outline-color;
 			@include tablet {
 				height: 2rem;
 				width: 100%;
@@ -113,9 +113,6 @@
 				background-size: 85px;
 				margin-left: 0rem;
 				margin-top: 3.5rem;
-			}
-			@include desktop {
-				margin-left: 1rem;
 			}
 		}
 	}
