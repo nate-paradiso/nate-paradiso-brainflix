@@ -7,6 +7,9 @@ import { VideoCardList } from './components/Component/VideoCardList/VideoCardLis
 import { VideoDetails } from './components/Component/VideoDetails/VideoDetail';
 import './App.scss';
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Upload } from './pages/Upload/Upload';
+
 
 
 function App() {
@@ -22,7 +25,10 @@ function App() {
     setSelectedVideo(id)
   }
   return (
-  <>
+
+
+    <BrowserRouter>
+
     <header >
       <NavBar/>
       <CurrentVideo
@@ -46,7 +52,8 @@ function App() {
       handleSelectVideo={handleSelectVideo}
       />    
     </main>
-   </>
+    <Upload/>
+   </BrowserRouter>
   )
 }
 

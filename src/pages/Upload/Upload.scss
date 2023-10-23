@@ -1,0 +1,164 @@
+@use "../../styles/partials/_variables" as *;
+@use "../../styles/partials/_mixins" as *;
+
+.upload-image {
+	padding: 1rem;
+	max-width: 100%;
+	border-radius: 4px;
+}
+input {
+	background-image: none;
+	padding-left: 1rem;
+}
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.form-title {
+	padding-left: 1rem;
+	font-weight: 600;
+	font-size: 1rem;
+	color: $primary-background-color-1;
+	@include tablet {
+		padding: 0rem 2.25rem 1rem 3rem;
+		font-size: 2.5rem;
+	}
+	@include desktop {
+		padding-left: 6rem;
+		margin-bottom: 0rem;
+		padding-bottom: 0rem;
+	}
+}
+.form-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	@include tablet {
+		padding: 0rem 3rem 0rem 3rem;
+	}
+	@include desktop {
+		padding: 0rem 2rem 0rem 5rem;
+	}
+	&__typing {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 0rem 1rem 1rem 1rem;
+		@include tablet {
+			padding: 0rem;
+			margin-left: 2rem;
+		}
+		&--title {
+			background-color: $alternative-background-color-1;
+			border-radius: 4px;
+			height: 6rem;
+			resize: none;
+			border: solid 2px $outline-color;
+			@include tablet {
+				height: 2rem;
+				width: 100%;
+				margin-right: 2rem;
+			}
+		}
+		&--comments {
+			background-color: $alternative-background-color-1;
+			border-radius: 4px;
+			height: 6rem;
+			resize: none;
+			border: solid 2px $outline-color;
+			@include tablet {
+				height: 2rem;
+				width: 100%;
+				margin-right: 2rem;
+			}
+		}
+		&--comments-container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			@include tablet {
+				flex-direction: row;
+				justify-content: space-between;
+			}
+		}
+		&--comments-label {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			align-self: flex-start;
+			text-transform: uppercase;
+			color: $brain-flix-silver;
+			font-weight: 500;
+			@include tablet {
+			}
+		}
+		&--button {
+			width: 100%;
+			background-color: $brain-flix-blue;
+			cursor: pointer;
+			height: 2.5rem;
+			color: $brain-flix-white;
+			font-family: "Avenir Next";
+			border-radius: 4px;
+			border: none;
+			background-image: url(../../assets/images/icons/upload.svg);
+			background-repeat: no-repeat;
+			background-position: 0.5rem;
+			text-transform: uppercase;
+			margin-top: 1rem;
+			&:hover {
+				background-color: $brain-flix-darkblue;
+			}
+
+			@include tablet {
+				max-width: 12.375rem;
+				height: 3.25rem;
+				margin: 0rem;
+			}
+			@include desktop {
+				max-width: 12.375rem;
+			}
+		}
+		&--cancel {
+			width: 50%;
+			cursor: pointer;
+			height: 2.5rem;
+			color: $brain-flix-blue;
+			font-family: "Avenir Next";
+			text-transform: uppercase;
+			margin-top: 1rem;
+			border: none;
+			background-color: none;
+			&:hover {
+				// background-color: $brain-flix-darkblue;
+			}
+			::placeholder {
+				color: $primary-background-color-1;
+			}
+			@include tablet {
+				max-width: 12.375rem;
+				height: 3.25rem;
+				margin: 0rem;
+			}
+			@include desktop {
+				max-width: 12.375rem;
+			}
+		}
+	}
+}
+
+textarea {
+	font-family: "Avenir Next";
+	font-size: 1rem;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	outline: none;
+	&:focus {
+		border-color: $brain-flix-blue;
+	}
+}
+textarea::placeholder {
+	font-family: "Avenir Next";
+	font-size: 1rem;
+	color: $primary-background-color-1;
+}
