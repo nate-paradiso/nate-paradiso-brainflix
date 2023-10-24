@@ -39,11 +39,11 @@ function App() {
         videoData={videoData}
         setVideoData={setVideoData} 
         />} />
-        {/* <Route path="/upload" element={<Upload />} />
+        <Route path="/upload" element={<Upload />} /> 
         <Route path="/video/videoId" element={<VideoPlayerPage 
          formatTime={formatTime}
-         videoData={videoData.data}
-         handleVideoData={handleVideoData}  />} /> */}
+         videoData={videoData}
+        setVideoData={setVideoData}  />} />
        </Routes>
        </BrowserRouter>
   )
