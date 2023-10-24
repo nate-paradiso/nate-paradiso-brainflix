@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Upload } from './pages/Upload/Upload';
 import { HomePage } from './pages/HomePage/HomePage';
+import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 
 function App() {
 
@@ -28,7 +29,7 @@ function App() {
         handleSelectVideo={handleSelectVideo} 
         />} />
         <Route path="/upload" element={<Upload />} />
-        {/* <Route path="/video/:videoId" element={<CurrentVideo />} /> */}
+        <Route path="/video/:videoId" element={<VideoPlayerPage />} />
       </Routes>
       </BrowserRouter>
     // {/* <header >
