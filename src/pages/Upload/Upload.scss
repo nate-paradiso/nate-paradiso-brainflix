@@ -1,11 +1,46 @@
 @use "../../styles/partials/_variables" as *;
 @use "../../styles/partials/_mixins" as *;
 
-.upload-image {
-	padding: 1rem;
-	max-width: 100%;
-	border-radius: 4px;
+.upload {
+	border-top: solid 2px $outline-color;
+	@include tablet {
+		margin: 3rem;
+	}
+	@include desktop {
+		margin: auto;
+		max-width: 1280px;
+	}
 }
+.upload-image {
+	padding: 0rem 1rem 0rem 1rem;
+	margin: none;
+	@include tablet {
+		padding: 0;
+	}
+	&__image {
+		max-width: 100%;
+		border-radius: 4px;
+		@include tablet {
+			width: 50vw;
+		}
+	}
+}
+.upload-title {
+	font-weight: 600;
+	@include tablet {
+		border-bottom: solid 2px $outline-color;
+		padding-bottom: 2rem;
+		line-height: 2.75rem;
+		font-size: 2.0625rem;
+	}
+}
+.upload-label {
+	align-self: flex-start;
+	text-transform: uppercase;
+	color: $brain-flix-silver;
+	font-weight: 500;
+}
+
 input {
 	background-image: none;
 	padding-left: 1rem;
@@ -35,10 +70,21 @@ input {
 	flex-direction: row;
 	justify-content: space-around;
 	@include tablet {
-		padding: 0rem 3rem 0rem 3rem;
+		padding: 0rem;
 	}
 	@include desktop {
 		padding: 0rem 2rem 0rem 5rem;
+	}
+	&__buttons {
+		@include tablet {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-start;
+			margin-bottom: 2rem;
+			margin-top: 2rem;
+			padding-top: 2rem;
+			border-top: solid 2px $outline-color;
+		}
 	}
 	&__typing {
 		display: flex;
@@ -47,7 +93,7 @@ input {
 		padding: 0rem 1rem 1rem 1rem;
 		@include tablet {
 			padding: 0rem;
-			margin-left: 2rem;
+			margin: 0rem;
 		}
 		&--title {
 			background-color: $alternative-background-color-1;
@@ -70,7 +116,7 @@ input {
 			@include tablet {
 				height: 2rem;
 				width: 100%;
-				margin-right: 2rem;
+				height: 6rem;
 			}
 		}
 		&--comments-container {
@@ -78,7 +124,7 @@ input {
 			flex-direction: column;
 			width: 100%;
 			@include tablet {
-				flex-direction: row;
+				flex-direction: column;
 				justify-content: space-between;
 			}
 		}
@@ -92,6 +138,13 @@ input {
 			@include tablet {
 			}
 		}
+		&--comments-tablet {
+			background-color: $alternative-background-color-1;
+			border-radius: 4px;
+			height: 6rem;
+			resize: none;
+			border: solid 2px $outline-color;
+		}
 		&--button {
 			width: 100%;
 			background-color: $brain-flix-blue;
@@ -101,7 +154,7 @@ input {
 			font-family: "Avenir Next";
 			border-radius: 4px;
 			border: none;
-			background-image: url(../../assets/images/icons/upload.svg);
+			background-image: url(../../assets/images/icons/publish.svg);
 			background-repeat: no-repeat;
 			background-position: 0.5rem;
 			text-transform: uppercase;
@@ -114,13 +167,14 @@ input {
 				max-width: 12.375rem;
 				height: 3.25rem;
 				margin: 0rem;
+				margin-left: 2rem;
 			}
 			@include desktop {
 				max-width: 12.375rem;
 			}
 		}
 		&--cancel {
-			width: 50%;
+			width: 100%;
 			cursor: pointer;
 			height: 2.5rem;
 			color: $brain-flix-blue;
@@ -129,11 +183,9 @@ input {
 			margin-top: 1rem;
 			border: none;
 			background-color: none;
+			background: none;
 			&:hover {
 				// background-color: $brain-flix-darkblue;
-			}
-			::placeholder {
-				color: $primary-background-color-1;
 			}
 			@include tablet {
 				max-width: 12.375rem;

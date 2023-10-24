@@ -5,8 +5,15 @@ export const Upload = () => {
   
   
     return ( 
-    <div>
-        <img className="upload-image"src={uploadImage} alt="biker" /> 
+    <div className="upload">
+        <h1 className="upload-title">Upload Video</h1>
+        <h4 
+        className="upload-label"> video thumbnail
+        </h4>
+
+        <div className="upload-image">
+            <img className="upload-image__image" src={uploadImage} alt="biker" /> 
+       </div>
        <form className="form" id="myForm">
             <div className="form-container">      
                 <div className="form-container__typing">
@@ -26,16 +33,19 @@ export const Upload = () => {
                     htmlFor="comment">Add a video description
                     </label>
                     <div className="form-container__typing--comments-container">
-                        <textarea className="form-container__typing--comments" 
+                        <textarea className="
+                        form-container__typing--comments-tablet" 
                         name="comment" id="comment" cols="30" rows="10" 
                         placeholder="Add a title to your video" >
                         </textarea>
+                        <div className="form-container__buttons">
                         <input className="form-container__typing--button" 
                         type="submit" value="PUBLISH"
                         />
                         <input className="form-container__typing--cancel" 
                         type="submit" value="CANCEL"
                         />
+                        </div>
                     </div>
                 </div>
             </div>    
