@@ -28,9 +28,13 @@ function App() {
 
 
     <BrowserRouter>
-
-    <header >
       <NavBar/>
+
+      <Routes>
+
+
+      </Routes>
+    <header >
       <CurrentVideo
       selectedVideoId={selectedVideoId}
       />
