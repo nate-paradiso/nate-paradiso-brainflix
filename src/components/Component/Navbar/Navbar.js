@@ -1,5 +1,6 @@
 import "./Navbar.scss";
 import logo from "../../../assets/images/logo/BrainFlix-logo.svg"
+import { Link } from "react-router-dom";
 
 
 function NavBar () {
@@ -7,7 +8,7 @@ function NavBar () {
     return(
         <nav className="header">
             <div className="header__logo">
-                <img src={logo} alt="logo"></img>
+                <Link to={`/`}><img src={logo} alt="logo"></img></Link>
             </div>
             <div className="header__search-container">
                 <form>
@@ -18,7 +19,7 @@ function NavBar () {
                     </div>
                 </div>
             </div>
-            <button className="header__button">UPLOAD</button>
+            <Link className="header__button" to={`/upload`}>UPLOAD</Link>
             <div className="header__img-container-tablet">
                 <div className="header__img-container--image-tablet">
                 </div>

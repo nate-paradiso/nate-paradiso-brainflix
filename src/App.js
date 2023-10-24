@@ -29,7 +29,10 @@ function App() {
         handleSelectVideo={handleSelectVideo} 
         />} />
         <Route path="/upload" element={<Upload />} />
-        <Route path="/video/:videoId" element={<VideoPlayerPage />} />
+        <Route path="/video/:videoId" element={<VideoPlayerPage 
+         formatTime={formatTime}
+         selectedVideoId={selectedVideoId}
+         handleSelectVideo={handleSelectVideo} />} />
       </Routes>
       </BrowserRouter>
     // {/* <header >
