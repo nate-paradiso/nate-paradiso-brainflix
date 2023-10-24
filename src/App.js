@@ -52,7 +52,7 @@ function App() {
       handleSelectVideo={handleSelectVideo}
       />    
     </main>
-    <Upload/>
+    {/* <Upload/> */}
    </BrowserRouter>
   )
 }
