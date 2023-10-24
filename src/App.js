@@ -1,11 +1,12 @@
 
 import { NavBar } from './components/Component/Navbar/Navbar';
 import './App.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Upload } from './pages/Upload/Upload';
 import { HomePage } from './pages/HomePage/HomePage';
 import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
+import axios from 'axios';
 
 function App() {
 
@@ -13,50 +14,38 @@ function App() {
     const date = new Date(timestamp);
     return date.toLocaleDateString();
   }
+  const [ videoData, setVideoData] = useState ([])
+  // const apiEndpoint = "https://project-2-api.herokuapp.com/videos?api_key=b83df1dc-dac4-4015-afac-d72c99d85694"
+  
+  useEffect(() => {
+    const fetchVideo = async () => {
+      const response = await axios.get("https://project-2-api.herokuapp.com/videos?api_key=b83df1dc-dac4-4015-afac-d72c99d85694");
+      console.log(response);
+      setVideoData(response.data);
+    }
+    fetchVideo();
+  }, [])
 
-  const [selectedVideoId, setSelectedVideo] = useState("84e96018-4022-434e-80bf-000ce4cd12b8")
-
-  const handleSelectVideo = (id) => {
-    setSelectedVideo(id)
-  }
+  
+  // const handleVideoData = (id) => {
+  //   setVideoData(id)
+  // }
   return (
     <BrowserRouter>
       <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage 
         formatTime={formatTime}
-        selectedVideoId={selectedVideoId}
-        handleSelectVideo={handleSelectVideo} 
+        videoData={videoData}
+        setVideoData={setVideoData} 
         />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/video/:videoId" element={<VideoPlayerPage 
+        {/* <Route path="/upload" element={<Upload />} />
+        <Route path="/video/videoId" element={<VideoPlayerPage 
          formatTime={formatTime}
-         selectedVideoId={selectedVideoId}
-         handleSelectVideo={handleSelectVideo} />} />
-      </Routes>
-      </BrowserRouter>
-    // {/* <header >
-    //   <CurrentVideo
-    //   selectedVideoId={selectedVideoId}
-    //   />
-    // </header>
-    // <main className="main">
-    //   <section className="main__comments">
-    //     <VideoDetails
-    //     formatTime={formatTime}
-    //     selectedVideoId={selectedVideoId}
-    //     />
-    //     <Form/>    
-    //     <CommentCardList
-    //     formatTime={formatTime}
-    //     selectedVideoId={selectedVideoId}
-    //     />
-    //   </section>  
-    //   <VideoCardList
-    //   selectedVideoId={selectedVideoId}
-    //   handleSelectVideo={handleSelectVideo}
-    //   />    
-    // </main> */}
+         videoData={videoData.data}
+         handleVideoData={handleVideoData}  />} /> */}
+       </Routes>
+       </BrowserRouter>
   )
 }
 

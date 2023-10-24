@@ -4,29 +4,29 @@ import { CommentCardList } from '../../components/Component/CommentCardList/Comm
 import { VideoCardList } from '../../components/Component/VideoCardList/VideoCardList';
 import { VideoDetails } from '../../components/Component/VideoDetails/VideoDetail';
 
-export const HomePage = ({formatTime, selectedVideoId, handleSelectVideo}) => {
+export const HomePage = ({formatTime, videoData, setVideoData }) => {
   return (
     <>
-     <header >
+     {/* <header >
       <CurrentVideo
-      selectedVideoId={selectedVideoId}
+      videoData={videoData}
       />
-    </header>
+    </header> */}
     <main className="main">
-      <section className="main__comments">
+      {/* <section className="main__comments">
         <VideoDetails
         formatTime={formatTime}
-        selectedVideoId={selectedVideoId}
+        videoData={videoData}
         />
         <Form/>    
         <CommentCardList
         formatTime={formatTime}
-        selectedVideoId={selectedVideoId}
+        videoData={videoData}
         />
-      </section>  
+      </section>   */}
       <VideoCardList
-      selectedVideoId={selectedVideoId}
-      handleSelectVideo={handleSelectVideo}
+      videoData={videoData}
+      setVideoData={setVideoData} 
       />    
     </main>
     </>
