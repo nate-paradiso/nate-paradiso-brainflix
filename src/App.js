@@ -1,16 +1,10 @@
 
 import { NavBar } from './components/Component/Navbar/Navbar';
-import { CurrentVideo } from './components/Component/CurrentVideo/CurrentVideo';
-import { Form } from './components/Component/Form/Form';
-import { CommentCardList } from './components/Component/CommentCardList/CommentCardList';
-import { VideoCardList } from './components/Component/VideoCardList/VideoCardList';
-import { VideoDetails } from './components/Component/VideoDetails/VideoDetail';
 import './App.scss';
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Upload } from './pages/Upload/Upload';
-
-
+import { HomePage } from './pages/HomePage/HomePage';
 
 function App() {
 
@@ -25,39 +19,40 @@ function App() {
     setSelectedVideo(id)
   }
   return (
-
-
     <BrowserRouter>
       <NavBar/>
-
       <Routes>
-
-
+        <Route path="/" element={<HomePage 
+        formatTime={formatTime}
+        selectedVideoId={selectedVideoId}
+        handleSelectVideo={handleSelectVideo} 
+        />} />
+        <Route path="/upload" element={<Upload />} />
+        {/* <Route path="/video/:videoId" element={<CurrentVideo />} /> */}
       </Routes>
-    <header >
-      <CurrentVideo
-      selectedVideoId={selectedVideoId}
-      />
-    </header>
-    <main className="main">
-      <section className="main__comments">
-        <VideoDetails
-        formatTime={formatTime}
-        selectedVideoId={selectedVideoId}
-        />
-        <Form/>    
-        <CommentCardList
-        formatTime={formatTime}
-        selectedVideoId={selectedVideoId}
-        />
-      </section>  
-      <VideoCardList
-      selectedVideoId={selectedVideoId}
-      handleSelectVideo={handleSelectVideo}
-      />    
-    </main>
-    {/* <Upload/> */}
-   </BrowserRouter>
+      </BrowserRouter>
+    // {/* <header >
+    //   <CurrentVideo
+    //   selectedVideoId={selectedVideoId}
+    //   />
+    // </header>
+    // <main className="main">
+    //   <section className="main__comments">
+    //     <VideoDetails
+    //     formatTime={formatTime}
+    //     selectedVideoId={selectedVideoId}
+    //     />
+    //     <Form/>    
+    //     <CommentCardList
+    //     formatTime={formatTime}
+    //     selectedVideoId={selectedVideoId}
+    //     />
+    //   </section>  
+    //   <VideoCardList
+    //   selectedVideoId={selectedVideoId}
+    //   handleSelectVideo={handleSelectVideo}
+    //   />    
+    // </main> */}
   )
 }
 
