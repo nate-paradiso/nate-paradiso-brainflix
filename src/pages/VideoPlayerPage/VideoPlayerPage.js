@@ -9,12 +9,12 @@ import { useState, useEffect } from 'react';
 
 const VideoPlayerPage = () => {
 
-  // const formatTime = (timestamp) => {
-  //   const date = new Date(timestamp);
-  //   return date.toLocaleDateString();
-  // }
+  const formatTime = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString();
+  }
 
-  const { videoId } = useParams();
+  const { videoIdData } = useParams();
   // const [ videoDataId, setVideoDataId] = useState ([])
   const [ videoData, setVideoData] = useState ([])
 
@@ -22,9 +22,13 @@ const VideoPlayerPage = () => {
   
   useEffect(() => {
     const fetchVideoId = async () => {
-      const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${videoId ? videoId : "84e96018-4022-434e-80bf-000ce4cd12b8" }?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
+      // if (videoIdData.length > 0) {
+      const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${videoIdData ? videoIdData : videoIdData[0].id }?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
       console.log(response);
       // setVideoData(response.data);
+      // console.log(videoData[0].id)
+      // }
+      
     }
     fetchVideoId();
   }, [])
@@ -38,30 +42,33 @@ const VideoPlayerPage = () => {
     fetchVideo();
   }, [])
 
-  if (videoData) console.log(videoData)
   return (
     <>
+    {/* added a ternary to the entire body to check for axios data and if not then state loading... */}
     {videoData ?  <>
     <header >
-     {/* <CurrentVideo
-    setVideoDataId={setVideoDataId} 
-     /> */}
+     <CurrentVideo
+    videoIdData={videoIdData} 
+    videoData={videoData}
+     />
    </header>
    <main className="main">
-     {/* <section className="main__comments">
+     <section className="main__comments">
        <VideoDetails
        formatTime={formatTime}
+       videoIdData={videoIdData} 
        videoData={videoData}
        />
        <Form/>    
-       <CommentCardList
+       {/* <CommentCardList
        formatTime={formatTime}
        videoData={videoData}
-       />
-     </section>   */}
+       /> */}
+     </section>  
     <VideoCardList
       videoData={videoData}
       setVideoData={setVideoData}  
+      videoIdData={videoIdData} 
       /> 
    </main> </> : <p>"loading..."</p> }
    </>

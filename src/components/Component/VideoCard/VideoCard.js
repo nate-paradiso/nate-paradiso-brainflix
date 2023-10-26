@@ -1,12 +1,13 @@
 import "./VideoCard.scss";
+import { Link } from "react-router-dom";
 
 export function VideoCard ( {videoData, setVideoData}) {
 
 
     return(
-        <div className="video-container__card" 
-        onClick={ () => setVideoData(videoData.id)}
-        >
+        <Link to={`/video/${videoData.id}`}>
+            <div className="video-container__card" >
+        
             <video 
             className="image" poster={videoData.image}>
             </video>
@@ -15,6 +16,7 @@ export function VideoCard ( {videoData, setVideoData}) {
                     <p className="video-container__card--text-paragraph">{videoData.channel}</p>
                 </div>
         </div>
+        </Link>
     )
 }
 

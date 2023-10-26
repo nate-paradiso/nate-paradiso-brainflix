@@ -3,7 +3,7 @@ import { VideoCard } from "../VideoCard/VideoCard";
 
 
 
-export function VideoCardList ({videoData, setVideoData}) {
+export function VideoCardList ({videoData, setVideoData, videoIdData}) {
 
     return(
         <section className="video-container">
@@ -11,7 +11,7 @@ export function VideoCardList ({videoData, setVideoData}) {
             className="video-container__title">Next Videos
             </h3>
                 {videoData
-                    .filter(video => video.id !== videoData.id)
+                    .filter(video => video.id !== videoIdData)
                     .map(video => 
                         <VideoCard
                             key={video.id}

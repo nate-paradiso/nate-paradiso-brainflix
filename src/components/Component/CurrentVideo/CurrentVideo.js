@@ -1,15 +1,17 @@
 import "./CurrentVideo.scss";
-import videoDetails from "../../../data/video-details.json"
 
-export function CurrentVideo ({selectedVideoId}) {
+
+
+export function CurrentVideo ({videoIdData, videoData}) {
 
     return(
         <section className="video-main">
             <div className="video-main__wrapper">
                 <video className="video-main__wrapper--video" 
-                poster={videoDetails
-                .find(videoImage => videoImage.id === selectedVideoId)
-                .image} controls>
+                
+                poster={videoData.find(video => video.id === videoIdData)?.image} 
+                
+                controls>
                 </video>
             </div>
         </section>
