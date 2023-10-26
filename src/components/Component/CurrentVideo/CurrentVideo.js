@@ -2,18 +2,25 @@ import "./CurrentVideo.scss";
 
 
 
-export function CurrentVideo ({videoIdData, videoData}) {
+export function CurrentVideo ({videoFromId, }) {
 
     return(
+        <>
+       {videoFromId ? (
         <section className="video-main">
             <div className="video-main__wrapper">
                 <video className="video-main__wrapper--video" 
-                
-                poster={videoData.find(video => video.id === videoIdData)?.image} 
-                
+                poster={videoFromId.image} 
                 controls>
                 </video>
             </div>
-        </section>
+        </section>)
+        :  
+        <p>Not Found</p>
+        }
+        </>
     )
 }
+
+
+

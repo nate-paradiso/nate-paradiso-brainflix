@@ -8,67 +8,66 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 const VideoPlayerPage = () => {
+  const { videoId } = useParams();
+  const [ videos, setVideos] = useState ([])
+  const [ videoFromId, setVideoFromId] = useState (null)
+
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+      const response = await axios.get("https://project-2-api.herokuapp.com/videos?api_key=b83df1dc-dac4-4015-afac-d72c99d85694");
+      setVideos(response.data);
+      } catch(error){
+        console.log(error);
+      }
+    };
+    fetchVideos();
+  }, [])
+
+
+  useEffect(() => {
+    const fetchFromVideoId = async (videoId) => {
+      try {
+      const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
+      setVideoFromId(response.data);
+      } catch(error){
+        console.log(error);
+      }
+    };
+    fetchFromVideoId(videoId || "84e96018-4022-434e-80bf-000ce4cd12b8");
+  }, [videoId]);
 
   const formatTime = (timestamp) => {
     const date = new Date(timestamp);
     return date.toLocaleDateString();
   }
 
-  const { videoIdData } = useParams();
-  // const [ videoDataId, setVideoDataId] = useState ([])
-  const [ videoData, setVideoData] = useState ([])
 
-
-  
-  useEffect(() => {
-    const fetchVideoId = async () => {
-      // if (videoIdData.length > 0) {
-      const response = await axios.get(`https://project-2-api.herokuapp.com/videos/${videoIdData ? videoIdData : videoIdData[0].id }?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
-      console.log(response);
-      // setVideoData(response.data);
-      // console.log(videoData[0].id)
-      // }
-      
-    }
-    fetchVideoId();
-  }, [])
-
-  useEffect(() => {
-    const fetchVideo = async () => {
-      const response = await axios.get("https://project-2-api.herokuapp.com/videos?api_key=b83df1dc-dac4-4015-afac-d72c99d85694");
-      console.log(response);
-      setVideoData(response.data);
-    }
-    fetchVideo();
-  }, [])
-
+  console.log(videoFromId)
   return (
     <>
-    {/* added a ternary to the entire body to check for axios data and if not then state loading... */}
-    {videoData ?  <>
+    {/* added a ternary to the entire body to check for axios data, if not there, then state loading... */}
+    {videos ?  <>
     <header >
      <CurrentVideo
-    videoIdData={videoIdData} 
-    videoData={videoData}
+    videoFromId={videoFromId}
      />
    </header>
    <main className="main">
      <section className="main__comments">
        <VideoDetails
        formatTime={formatTime}
-       videoIdData={videoIdData} 
-       videoData={videoData}
+       videoFromId={videoFromId}
        />
        <Form/>    
-       {/* <CommentCardList
+       <CommentCardList
        formatTime={formatTime}
-       videoData={videoData}
-       /> */}
+       videoFromId={videoFromId}
+       />
      </section>  
     <VideoCardList
-      videoData={videoData}
-      setVideoData={setVideoData}  
-      videoIdData={videoIdData} 
+      videos={videos}
       /> 
    </main> </> : <p>"loading..."</p> }
    </>

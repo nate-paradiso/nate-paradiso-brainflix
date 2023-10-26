@@ -6,41 +6,19 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 
-export function VideoDetails ( {videoIdData, formatTime, videoData}) {
-
-    
-    const [videoDetails, setVideoDetails] = useState()
-
-    useEffect(() => {
-        const fetchVideoDetails = async () => {
-            const response =await 
-            axios.get(`https://project-2-api.herokuapp.com/videos/${videoIdData}?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
-            console.log(response)
-            setVideoDetails(response.data)
-        }
-        fetchVideoDetails();
-    }, []);
-
-
-
+export function VideoDetails ( {videoFromId, formatTime}) {
     return(
         <>
-        {videoDetails ? <>
+        {videoFromId ? <>
         <div className="details-container">
-        <h1 className="title">{videoData
-        .find(videoImage => videoImage.id === videoDetails.id)
-        .title}</h1>
-        {/* <div className="data">
+        <h1 className="title">{videoFromId.title}</h1>
+        <div className="data">
             <div className="data__container">
                 <h3 className="data__container--title">
-                    By {videoData
-                    .find(videoImage => videoImage.id === videoIdData)
-                    .channel}
+                    By {videoFromId.channel}
                 </h3>
                 <p className="data__container--numbers data__container--margin">
-                    {formatTime(videoData
-                    .find(videoImage => videoImage.id === videoIdData)
-                    .timestamp)}
+                    {formatTime(videoFromId.timestamp)}
                 </p>            
             </div>
             <div className="data__container">
@@ -48,34 +26,26 @@ export function VideoDetails ( {videoIdData, formatTime, videoData}) {
                     <img className="data__container--icon" 
                     src={viewsIcon}  alt="views icon" />
                     <p className="data__container--numbers">
-                        {videoData
-                        .find(videoImage => videoImage.id === videoIdData)
-                        .views}
+                        {videoFromId.views}
                     </p>
                 </div>
                 <div className="data__container-likes">
                     <img className="data__container--icon" 
                     src={likesIcon} alt="" />
                     <p className="data__container--numbers data__container--margin">
-                        {videoData
-                        .find(videoImage => videoImage.id === videoIdData)
-                        .likes}
+                        {videoFromId.likes}
                     </p>
                 </div>
             </div>
         </div>
         <div>
             <p className="data__description">
-                {videoData
-                .find(videoImage => videoImage.id === videoIdData)
-                .description}
+                {videoFromId.description}
             </p>
             <h4 className="data__comment">
-                {videoData
-                .find(videoImage => videoImage.id === videoIdData)
-                .comments.length} Comments
+                {videoFromId.comments.length} Comments
             </h4>
-        </div> */}
+        </div>
         </div> </> : <p>"loading..."</p> }   
         </> 
     )

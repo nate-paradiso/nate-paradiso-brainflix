@@ -36,12 +36,16 @@
 			margin-top: 0rem;
 		}
 	}
+
 	&__title {
 		padding-top: 1rem;
 		align-self: flex-start;
 		text-transform: uppercase;
 		color: #afafaf;
 		font-weight: 400;
+	}
+	&__hidden {
+		display: none;
 	}
 }
 
