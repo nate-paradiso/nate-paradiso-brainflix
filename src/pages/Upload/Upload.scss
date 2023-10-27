@@ -5,10 +5,19 @@
 	border-top: solid 2px $outline-color;
 	@include tablet {
 		margin: 3rem;
+		border: none;
 	}
 	@include desktop {
 		margin: auto;
 		max-width: 1280px;
+		border: none;
+	}
+}
+.upload-image-form {
+	@include desktop {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 }
 .upload-image {
@@ -22,6 +31,11 @@
 		border-radius: 4px;
 		@include tablet {
 			width: 50vw;
+		}
+		@include desktop {
+			width: 27.9rem;
+			border-bottom: solid 2px $outline-color;
+			padding-bottom: 2rem;
 		}
 	}
 }
@@ -44,30 +58,47 @@
 	@include tablet {
 		padding: 0rem 0rem 0rem 0rem;
 	}
+	@include desktop {
+		display: none;
+	}
 }
-
-input {
-	background-image: none;
-	padding-left: 1rem;
+.upload-image-title {
+	@include desktop {
+		display: flex;
+		flex-direction: column;
+	}
 }
-.form {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
-.form-title {
-	padding-left: 1rem;
-	font-weight: 600;
-	font-size: 1rem;
-	color: $primary-background-color-1;
+.upload-label-desktop {
+	display: none;
+	padding: 0rem 1rem 0rem 1rem;
+	align-self: flex-start;
+	text-transform: uppercase;
+	color: $brain-flix-silver;
+	font-weight: 500;
 	@include tablet {
-		padding: 0rem 2.25rem 1rem 3rem;
-		font-size: 2.5rem;
+		padding: 0rem 0rem 0rem 0rem;
 	}
 	@include desktop {
-		padding-left: 6rem;
-		margin-bottom: 0rem;
-		padding-bottom: 0rem;
+		display: block;
+		margin-top: 1rem;
+	}
+}
+
+.input-title {
+	padding-left: 1rem;
+	height: 40px;
+	width: 100%;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 1rem;
+	background-color: $brain-flix-alabaster;
+	outline: none;
+	border: solid 2px $brain-flix-mercury;
+	&:focus {
+		border-color: $brain-flix-blue;
+	}
+	&::placeholder {
+		color: $brain-flix-black;
 	}
 }
 .form-container {
@@ -78,7 +109,7 @@ input {
 		padding: 0rem;
 	}
 	@include desktop {
-		padding: 0rem 2rem 0rem 5rem;
+		padding: 0rem 0rem 0rem 5rem;
 	}
 	&__buttons-mobile {
 		@include tablet {
@@ -164,6 +195,9 @@ input {
 			height: 6rem;
 			resize: none;
 			border: solid 2px $outline-color;
+			&::placeholder {
+				color: $brain-flix-black;
+			}
 		}
 		&--button {
 			width: 100%;
@@ -225,9 +259,4 @@ textarea {
 	&:focus {
 		border-color: $brain-flix-blue;
 	}
-}
-textarea::placeholder {
-	font-family: "Avenir Next";
-	font-size: 1rem;
-	color: $primary-background-color-1;
 }

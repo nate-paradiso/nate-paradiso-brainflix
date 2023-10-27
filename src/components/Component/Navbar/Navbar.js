@@ -12,7 +12,7 @@ function NavBar () {
             </div>
             <div className="header__search-container">
                 <form>
-                    <input type="text" placeholder="Search" name="search"></input>
+                    <input className="input-nav" type="text" placeholder="Search" name="search"></input>
                 </form>
                 <div className="header__img-container">
                     <div className="header__img-container--image">

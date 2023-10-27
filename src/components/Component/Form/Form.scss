@@ -5,6 +5,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	@include desktop {
+		width: 80%;
+	}
 }
 .form-title {
 	padding-left: 1rem;
@@ -127,9 +130,4 @@ textarea {
 	&:focus {
 		border-color: $brain-flix-blue;
 	}
-}
-textarea::placeholder {
-	font-family: "Avenir Next";
-	font-size: 1rem;
-	color: $primary-background-color-1;
 }
