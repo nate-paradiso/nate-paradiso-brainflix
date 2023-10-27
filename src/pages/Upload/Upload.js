@@ -34,7 +34,6 @@ export const Upload = () => {
        <form className="form" id="myForm" onSubmit={handleSubmit} >
             <div className="form-container">      
                 <div className="form-container__typing">
-
                     <label className="shows__card--label 
                     shows__card--label-display 
                     form-container__typing--comments-label" 
@@ -60,15 +59,23 @@ export const Upload = () => {
                         value={myFormData.comment}
                         >
                         </textarea>
-                        <div className="form-container__buttons">
-                        <input className="form-container__typing--button" 
-                        type="submit" value="PUBLISH" 
-                        />
-                        <input className="form-container__typing--cancel" 
-                        type="submit" value="CANCEL" 
-                        />
+                        <div className="form-container__buttons-mobile">
+                          <input className="form-container__typing--button" 
+                          type="submit" value="PUBLISH" 
+                          />
+                          <input className="form-container__typing--cancel" 
+                          type="submit" value="CANCEL" 
+                          />
                         </div>
                     </div>
+                </div>
+                <div className="form-container__buttons-desktop">
+                  <input className="form-container__typing--button" 
+                  type="submit" value="PUBLISH" 
+                  />
+                  <input className="form-container__typing--cancel" 
+                  type="submit" value="CANCEL" 
+                  />
                 </div>
             </div>    
         </form>

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export function VideoCard ( {videos, videoId}) {
 
-    console.log(videos.id)
     return(
         <>
             {videos.map((video)  => (
@@ -19,6 +18,7 @@ export function VideoCard ( {videos, videoId}) {
                     <p className="video-container__card--text-paragraph">{video.channel}</p>
                 </div>
         </div>
+        {window.scrollTo(0, 0)}
         </Link>
         ))}
         </>

@@ -30,9 +30,6 @@ a {
 		&--text {
 			display: flex;
 			flex-direction: column;
-			@include desktop {
-				margin-right: 2rem;
-			}
 		}
 		&--text-title {
 			margin-top: 0rem;

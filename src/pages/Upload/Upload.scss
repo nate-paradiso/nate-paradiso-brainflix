@@ -80,8 +80,23 @@ input {
 	@include desktop {
 		padding: 0rem 2rem 0rem 5rem;
 	}
-	&__buttons {
+	&__buttons-mobile {
 		@include tablet {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: flex-start;
+			margin-bottom: 2rem;
+			margin-top: 2rem;
+			padding-top: 2rem;
+			border-top: solid 2px $outline-color;
+		}
+		@include desktop {
+			display: none;
+		}
+	}
+	&__buttons-desktop {
+		display: none;
+		@include desktop {
 			display: flex;
 			flex-direction: row-reverse;
 			justify-content: flex-start;
@@ -189,9 +204,6 @@ input {
 			border: none;
 			background-color: none;
 			background: none;
-			&:hover {
-				// background-color: $brain-flix-darkblue;
-			}
 			@include tablet {
 				max-width: 12.375rem;
 				height: 3.25rem;

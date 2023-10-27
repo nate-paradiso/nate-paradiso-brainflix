@@ -44,7 +44,6 @@ const VideoPlayerPage = () => {
   }
 
 
-  console.log(videoFromId)
   return (
     <>
     {/* added a ternary to the entire body to check for axios data, if not there, then state loading... */}
