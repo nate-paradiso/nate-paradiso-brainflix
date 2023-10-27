@@ -1,15 +1,16 @@
 import "./VideoCard.scss";
 import { Link } from "react-router-dom";
 
-export function VideoCard ( {videos}) {
+export function VideoCard ( {videos, videoId}) {
 
+    console.log(videos.id)
     return(
-        <div>
+        <>
             {videos.map((video)  => (
             <Link to={`/video/${video.id}`}
-            key={video.id}>
-        <div className={`video-container__card 
-            ${videos.id === video.id ? "video-container__hidden" : ""}`}>
+            key={video.id}
+            className={`${videoId === video.id ? "video-container__hidden" : ""}`}>
+        <div className="video-container__card">
             <video 
             className="image" poster={video.image}>
             </video>
@@ -20,7 +21,7 @@ export function VideoCard ( {videos}) {
         </div>
         </Link>
         ))}
-        </div>
+        </>
     )
 }
 

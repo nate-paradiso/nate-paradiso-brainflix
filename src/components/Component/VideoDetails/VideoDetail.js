@@ -1,9 +1,6 @@
 import "./VideoDetails.scss";
-// import videoDetails from "../../../data/video-details.json"
 import viewsIcon from "../../../assets/images/icons/views.svg"
 import likesIcon from "../../../assets/images/icons/likes.svg"
-import { useState, useEffect } from "react";
-import axios from "axios";
 
 
 export function VideoDetails ( {videoFromId, formatTime}) {

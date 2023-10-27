@@ -68,6 +68,7 @@ const VideoPlayerPage = () => {
      </section>  
     <VideoCardList
       videos={videos}
+      videoId={videoId}
       /> 
    </main> </> : <p>"loading..."</p> }
    </>

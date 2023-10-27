@@ -4,33 +4,21 @@ import { useState } from "react";
 
 export const Upload = () => {
   
-    const [ name, setName] = useState("");
+    const [ title, setTitle] = useState("");
     const [ comment, setComment ] = useState("");
     const [ myFormData, setMyFormData ] = useState({});
 
     const handleAllChanges = (event) => {
-      setMyFormData({...myFormData, [event.target.name]: event.target.value, [event.target.comment]: event.target.value});
+      setMyFormData({...myFormData, [event.target.title]: event.target.value, [event.target.comment]: event.target.value});
     }
 
 
-    const isFormValid = () => {
-        if (!name || !comment ) {
-          return false;
-        }
-        return true;
-      };
-
+ 
     
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (isFormValid()) {
-      alert("Successful");
-    } else {
-
-        window.location.href = '/'; 
-        alert("Failed");
-    }
+    window.location.href = '/'; 
+    alert("Successful");
   };
 
     return ( 
@@ -53,10 +41,10 @@ export const Upload = () => {
                     htmlFor="comment">title your video
                     </label>
                     <input className="form-container__typing--name" 
-                    type="text" name="name" id="name" 
+                    type="text" name="title" id="title" 
                     placeholder="Add a title to your video" 
                     onChange={handleAllChanges}
-                    value={myFormData.name}
+                    value={myFormData.title}
                     />
                     <label className="shows__card--label 
                     shows__card--label-display 

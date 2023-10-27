@@ -3,7 +3,7 @@ import { VideoCard } from "../VideoCard/VideoCard";
 
 
 
-export function VideoCardList ({videos}) {
+export function VideoCardList ({videos, videoId}) {
 
     return(
         <section className="video-container">
@@ -12,6 +12,7 @@ export function VideoCardList ({videos}) {
             </h3>
             <VideoCard
             videos={videos}
+            videoId={videoId}
             />
         </section>
     )
