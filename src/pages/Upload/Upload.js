@@ -65,20 +65,20 @@ export const Upload = () => {
                             type="submit" value="PUBLISH" 
                             />
                             <input className="form-container__typing--cancel" 
-                            type="submit" value="CANCEL" 
+                            type="" value="CANCEL" 
                             />
                           </div>
                       </div>
                   </div>
               </div>    
-          <div className="form-container__buttons-desktop">
-                    <input className="form-container__typing--button" 
-                    type="submit" value="PUBLISH" 
-                    />
-                    <input className="form-container__typing--cancel" 
-                    type="submit" value="CANCEL" 
-                    />
-                  </div>
+            <div className="form-container__buttons-desktop">
+              <input className="form-container__typing--button" 
+              type="submit" value="PUBLISH" 
+              />
+              <input className="form-container__typing--cancel" 
+              type="" value="CANCEL" 
+              />
+            </div>
           </form>
         </div>
     </div>
