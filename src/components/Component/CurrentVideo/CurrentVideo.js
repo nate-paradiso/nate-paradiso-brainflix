@@ -2,7 +2,7 @@ import "./CurrentVideo.scss";
 
 
 
-export function CurrentVideo ({videoFromId, }) {
+export function CurrentVideo ({videoFromId }) {
 
     return(
         <>
