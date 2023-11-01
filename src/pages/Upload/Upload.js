@@ -1,6 +1,7 @@
 import "./Upload.scss"
 import uploadImage from "../../assets/images/Upload-video-preview.jpg"
 import { useState } from "react";
+import axios from "axios";
 
 export const Upload = () => {
   
@@ -9,16 +10,22 @@ export const Upload = () => {
     const [ myFormData, setMyFormData ] = useState({});
 
     const handleAllChanges = (event) => {
-      setMyFormData({...myFormData, [event.target.title]: event.target.value, [event.target.comment]: event.target.value});
+      setMyFormData({...myFormData, [event.target.title]: event.target.value, [event.target.description]: event.target.value});
     }
 
 
  
     
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event, title, description) => {
     event.preventDefault();
+
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/videos`, {
+      title: title,
+      description: description
+    });
     window.location.href = '/'; 
     alert("Successful");
+
   };
 
     return ( 
@@ -55,9 +62,9 @@ export const Upload = () => {
                           <textarea className="
                           form-container__typing--comments-tablet" 
                           name="comment" id="comment" cols="30" rows="10" 
-                          placeholder="Add a title to your video" 
+                          placeholder="Add a description to your video" 
                           onChange={handleAllChanges}
-                          value={myFormData.comment}
+                          value={myFormData.description}
                           >
                           </textarea>
                           <div className="form-container__buttons-mobile">

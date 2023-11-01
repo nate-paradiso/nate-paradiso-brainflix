@@ -12,6 +12,7 @@ export function CurrentVideo ({videoFromId }) {
                 <video className="video-main__wrapper--video" 
                 poster={videoFromId.image} 
                 controls>
+                     <source src={videoFromId.video} type="video/mp4" />
                 </video>
             </div>
         </section>)

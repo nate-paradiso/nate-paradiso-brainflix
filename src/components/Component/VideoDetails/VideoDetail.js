@@ -40,7 +40,7 @@ export function VideoDetails ( {videoFromId, formatTime}) {
                 {videoFromId.description}
             </p>
             <h4 className="data__comment">
-                {videoFromId.comments.length} Comments
+                {/* {videoFromId.comments.length} Comments */}
             </h4>
         </div>
         </div> </> : <p>"loading..."</p> }   
