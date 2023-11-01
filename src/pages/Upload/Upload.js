@@ -5,23 +5,21 @@ import axios from "axios";
 
 export const Upload = () => {
   
-    const [ title, setTitle] = useState("");
-    const [ comment, setComment ] = useState("");
     const [ myFormData, setMyFormData ] = useState({});
 
     const handleAllChanges = (event) => {
-      setMyFormData({...myFormData, [event.target.title]: event.target.value, [event.target.description]: event.target.value});
+      setMyFormData({...myFormData, [event.target.name]: event.target.value});
     }
 
 
  
     
-  const handleSubmit = async (event, title, description) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/videos`, {
-      title: title,
-      description: description
+      title: myFormData.title,
+      description: myFormData.description
     });
     window.location.href = '/'; 
     alert("Successful");
@@ -61,16 +59,15 @@ export const Upload = () => {
                       <div className="form-container__typing--comments-container">
                           <textarea className="
                           form-container__typing--comments-tablet" 
-                          name="comment" id="comment" cols="30" rows="10" 
+                          name="description" id="comment" cols="30" rows="10" 
                           placeholder="Add a description to your video" 
                           onChange={handleAllChanges}
                           value={myFormData.description}
                           >
                           </textarea>
                           <div className="form-container__buttons-mobile">
-                            <input className="form-container__typing--button" 
-                            type="submit" value="PUBLISH" 
-                            />
+                            <button className="form-container__typing--button" 
+                            >PUBLISH</button>
                             <input className="form-container__typing--cancel" 
                             type="" value="CANCEL" 
                             />

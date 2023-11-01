@@ -3,7 +3,7 @@ import "./CurrentVideo.scss";
 
 
 export function CurrentVideo ({videoFromId }) {
-
+console.log(videoFromId)
     return(
         <>
        {videoFromId ? (

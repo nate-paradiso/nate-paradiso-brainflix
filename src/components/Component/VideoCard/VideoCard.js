@@ -2,7 +2,7 @@ import "./VideoCard.scss";
 import { Link } from "react-router-dom";
 
 export function VideoCard ( {videos, videoId}) {
-
+console.log(videos)
     return(
         <>
             {videos.map((video)  => (
