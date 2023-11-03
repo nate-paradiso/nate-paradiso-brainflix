@@ -1,9 +1,38 @@
 import "./Form.scss";
+import { useState } from "react";
+import axios from "axios";
+import { useParams } from 'react-router-dom'
 
 export function Form () {
 
+    const { videoId } = useParams();
+    const [myFormData, setMyFormData] = useState({ comments: '' });
+
+
+    const handleAllChanges = (event) => {
+        setMyFormData({ ...myFormData, comments: event.target.value });
+      }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        if (!myFormData.comments){
+          alert("Must provide a comment.")
+        
+        } else {
+            try { 
+                await axios.post((`${process.env.REACT_APP_BACKEND_URL}/videos/${videoId}/comments`), {
+                comment: myFormData.comments
+                });
+            }catch (error){
+                console.error(error); 
+                alert("Unsuccessful");
+            }
+        }
+      };
+
     return(
-        <form className="form" id="myForm">
+        <form className="form" id="myForm" onSubmit={handleSubmit}>
             <div className="form-box">
                 <div className="form-box__img-container">
                     <div 
@@ -18,12 +47,13 @@ export function Form () {
                     </label>
                     <div className="form-box__typing--comments-container">
                         <textarea className="form-box__typing--comments" 
-                        name="comment" id="comment" cols="30" rows="10" 
-                        placeholder="Add a new comment" >
+                        name="comments" id="comment" cols="30" rows="10" 
+                        placeholder="Add a new comment" 
+                        onChange={handleAllChanges}
+                        value={myFormData.comments}>
                         </textarea>
-                        <input className="form-box__typing--button" 
-                        type="submit" value="comment"
-                        />
+                        <button className="form-box__typing--button" 
+                        >Comment</button>
                     </div>
                 </div>
             </div>    

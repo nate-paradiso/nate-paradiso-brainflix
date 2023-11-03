@@ -17,13 +17,17 @@ export const Upload = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!myFormData.title || !myFormData.description){
+      alert("Must provide title and description.")
+    
+    } else {
     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/videos`, {
       title: myFormData.title,
       description: myFormData.description
     });
-    window.location.href = '/'; 
-    alert("Successful");
-
+      window.location.href = '/'; 
+      alert("Successful");
+    }
   };
 
     return ( 
@@ -68,21 +72,18 @@ export const Upload = () => {
                           <div className="form-container__buttons-mobile">
                             <button className="form-container__typing--button" 
                             >PUBLISH</button>
-                            <input className="form-container__typing--cancel" 
-                            type="" value="CANCEL" 
-                            />
+                            <button className="form-container__typing--cancel" 
+                            >CANCEL</button>
                           </div>
                       </div>
                   </div>
               </div>    
-            <div className="form-container__buttons-desktop">
-              <input className="form-container__typing--button" 
-              type="submit" value="PUBLISH" 
-              />
-              <input className="form-container__typing--cancel" 
-              type="" value="CANCEL" 
-              />
-            </div>
+              <div className="form-container__buttons-desktop">
+                <button className="form-container__typing--button" 
+                >PUBLISH</button>
+                <button className="form-container__typing--cancel" 
+                >CANCEL</button>
+              </div>
           </form>
         </div>
     </div>

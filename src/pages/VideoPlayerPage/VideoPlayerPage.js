@@ -16,7 +16,6 @@ const VideoPlayerPage = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-      // const response = await axios.get("http://localhost:8088/videos");
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/videos`);
       setVideos(response.data);
       } catch(error){
@@ -30,8 +29,6 @@ const VideoPlayerPage = () => {
   useEffect(() => {
     const fetchFromVideoId = async (videoId) => {
       try {
-      // const response = await axios.get
-      // (`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b83df1dc-dac4-4015-afac-d72c99d85694`);
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/videos/${videoId}`);
       setVideoFromId(response.data);
       } catch(error){

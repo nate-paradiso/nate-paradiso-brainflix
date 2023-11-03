@@ -6,7 +6,7 @@
 	flex-direction: column;
 	justify-content: space-around;
 	@include desktop {
-		width: 80%;
+		width: 87%;
 	}
 }
 .form-title {
@@ -33,6 +33,7 @@
 	}
 	@include desktop {
 		padding: 0rem 2rem 0rem 5rem;
+		width: 100%;
 	}
 	&__typing {
 		display: flex;
