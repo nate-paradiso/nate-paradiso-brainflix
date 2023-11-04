@@ -59,7 +59,9 @@ const VideoPlayerPage = () => {
        formatTime={formatTime}
        videoFromId={videoFromId}
        />
-       <Form/>    
+       <Form
+       setVideoFromId={setVideoFromId}
+       />    
        <CommentCardList
        formatTime={formatTime}
        videoFromId={videoFromId}

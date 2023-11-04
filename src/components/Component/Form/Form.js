@@ -3,10 +3,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom'
 
-export function Form () {
+export function Form ({setVideoFromId}) {
 
     const { videoId } = useParams();
-    const [myFormData, setMyFormData] = useState({ comments: '' });
+    const [myFormData, setMyFormData] = useState({comments: ""});
 
 
     const handleAllChanges = (event) => {
@@ -27,9 +27,22 @@ export function Form () {
             }catch (error){
                 console.error(error); 
                 alert("Unsuccessful");
-            }
+            }   
         }
-      };
+        
+        // const getComments = async (videoId) => {
+        //     try {
+        //         const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/videos/${videoId}`);
+        //         const updatedComments = response.data.comments;
+        //         setVideoFromId(updatedComments)
+        //     } catch(error){
+        //         console.log(error);
+        //     }
+        //     return
+        // };
+    };
+   
+    
 
     return(
         <form className="form" id="myForm" onSubmit={handleSubmit}>
