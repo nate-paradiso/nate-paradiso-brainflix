@@ -24,11 +24,17 @@ export function Form ({setVideoFromId}) {
                 await axios.post((`${process.env.REACT_APP_BACKEND_URL}/videos/${videoId}/comments`), {
                 comment: myFormData.comments
                 });
+                 const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/videos/${videoId}`);
+                const updatedComments = response.data.comments;
+                setVideoFromId(updatedComments)
+
+                window.location.href = `/video/${videoId}`;
             }catch (error){
                 console.error(error); 
                 alert("Unsuccessful");
             }   
         }
+        //leaving this code because i want to figure out how to get the comments after I post.
         
         // const getComments = async (videoId) => {
         //     try {
